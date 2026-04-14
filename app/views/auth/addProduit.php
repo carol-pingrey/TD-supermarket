@@ -7,12 +7,12 @@ require_once("header.php");
     <h1>Changer la quantité du produit dans le stock</h1>
     <form id="achatForm" method="post" action="/addProduit" novalidate>
 
-        <div class="form-group2">
+        <!-- <div class="form-group2">
             <input type="radio" name="action" value="add" checked>
             <label for="add">Ajouter</label>
             <input type="radio" name="action" value="remove">
             <label for="remove">Retirer</label>
-        </div>
+        </div> -->
 
         <div class="form-group">
             <label for="caisse">Produit</label>
