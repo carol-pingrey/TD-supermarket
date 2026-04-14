@@ -1,0 +1,211 @@
+// Variables
+$primary: #2ecc71;  
+$secondary: #27ae60;
+$dark: #2c3e50;
+$light: #ecf0f1;
+$white: #ffffff;
+$font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$light-gray: #f4f7f6;
+$border-color: #ddd;
+$border: #ccc;
+
+// Reset de base
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 1.5rem 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+
+  &.btn-green {
+    background: $secondary;
+    color: white;
+    &:hover { background: darken($secondary, 10%); }
+  }
+}
+
+.field {
+  width: 300px;
+  display: block;
+  padding: 8px 12px;
+  margin: 10px 0;
+  border: 1px solid $border;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: $primary;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+.form-group2 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+body {
+    font-family: $font-main;
+    background-color: #f9f9f9;
+    color: $dark;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+// Header & Navigation
+header {
+    background-color: $white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        // Le Logo MAR<span>KET</span>
+        a[href="/accueil"] {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: $dark;
+            letter-spacing: -1px;
+
+            span {
+                color: $primary;
+            }
+        }
+
+        // Liens de navigation
+        div:last-child {
+            display: flex;
+            gap: 1.5rem;
+
+            a {
+                text-decoration: none;
+                color: $dark;
+                font-weight: 500;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+table {
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    min-width: 600px; 
+
+    thead {
+        background-color: $dark;
+        color: #fff;
+
+        th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid $border-color;
+            transition: background-color 0.2s ease;
+
+            // Effet zébré (une ligne sur deux)
+            &:nth-child(even) {
+                background-color: $light-gray;
+            }
+
+            // Effet au survol
+            &:hover {
+                background-color: rgba($primary, 0.1);
+            }
+        }
+
+        td {
+            padding: 12px 15px;
+            color: #555;
+            font-size: 0.95rem;
+
+            // Alignement à droite pour les chiffres/prix
+            &.price, &.quantity {
+                text-align: right;
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+// Contenu Principal
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+// Footer
+footer {
+    background-color: $dark;
+    color: $white;
+    padding: 1.5rem 0;
+    margin-top: auto;
+    text-align: center;
+
+    p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+}
+
+// Responsive simple
+@media (max-width: 768px) {
+    header nav > div {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
